@@ -1,0 +1,4 @@
+<view wx:for="{{goods}}" wx:key="{{item.index}}">
+  <text>{{item.title}} </text>
+  <text> 数量：{{item.num}}</text>
+</view>

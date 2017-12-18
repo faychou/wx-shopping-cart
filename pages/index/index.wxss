@@ -1,0 +1,26 @@
+/**index.wxss**/
+
+.item {
+  margin:20px;
+}
+
+.btn {
+  margin:10px;
+  padding:10px;
+  border:1px solid #eee;
+  border-radius:5px;
+  background-color: #ddd;
+  color:#fff;
+}
+.btn:active {
+  color:hotpink;
+}
+
+.cart {
+  margin:20px;
+  padding:10px;
+  border:1px solid #eee;
+  border-radius: 5px;
+  color:#fff;
+  background-color:darksalmon;
+}

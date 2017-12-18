@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='item' wx:for="{{goods}}" wx:key="{{item.id}}">
+    <text>{{item.title}}</text>
+    <text 
+      class='btn' 
+      bindtap="addCount" 
+      data-index="{{item.id}}"
+      data-title="{{item.title}}"  
+      data-price="{{item.price}}"
+      >添加到购物车</text>
+  </view>
+  <view class='cart' bindtap="goCart">购物车</view>
+</view>
