@@ -1,0 +1,9 @@
+<view class="detail">
+  <image></image>
+  <view class='detail-header'>
+    <text class='detail-header-title'>{{goods.title}}</text>
+    <text class='detail-header-text'></text>
+  </view>
+  <view class='add-to-cart' bindtap='addCount'>add to cart</view>
+  <view class='view-cart' bindtap='goCart'>view cart</view>
+</view>

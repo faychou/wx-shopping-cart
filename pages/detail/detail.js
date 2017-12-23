@@ -1,29 +1,34 @@
-//index.js
-//获取商品数据
+// pages/detail/detail.js
+//模拟获取服务器商品数据
 var datas = require('../../data/data.js')
-
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    userInfo: {},
-    goods:[]
+    goods:{}
   },
-  onLoad: function () {
-    console.log('onLoad')
+
+  /* 生命周期函数--监听页面加载 */
+  onLoad: function (options) {
+    console.log(options.goodsId)
+    //模拟取得服务器对应商品
+    var goods = datas.goods[options.goodsId - 1]
+    console.log(goods)
     this.setData({
-      goods:datas.goods
+      goods:goods
     })
   },
   //添加到购物车
-  addCount:function(e) {
-    //获取设置在标签上的index值
-    var index = e.currentTarget.dataset.index
-    
+  addCount: function (e) {
+    var that = this
     //获取缓存中的购物车数据
     var cartItems = wx.getStorageSync("cartItems") || []
-    
+
     //判断该商品是否已经存在购物车中
     var exist = cartItems.find(function (el) {
-      return el.index == e.target.dataset.index
+      return el.index == that.data.goods.id
     })
 
     //如果购物车里面有该商品那么他的数量每次加一
@@ -31,10 +36,10 @@ Page({
       exist.num = exist.num + 1
     } else {//否则新增加商品
       cartItems.push({
-        index: e.target.dataset.index,
-        title: e.target.dataset.title,
-        src: e.target.dataset.src,
-        price: e.target.dataset.price,
+        index: that.data.goods.id,
+        title: that.data.goods.title,
+        src: that.data.goods.src,
+        price: that.data.goods.price,
         num: 1,
         selected: true
       })
@@ -48,7 +53,7 @@ Page({
     wx.setStorageSync("cartItems", cartItems)
   },
   //前往购物车
-  goCart:function() {
+  goCart: function () {
     wx.navigateTo({
       url: '../cart/cart'
     })

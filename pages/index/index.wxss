@@ -1,7 +1,11 @@
 /**index.wxss**/
-
 .item {
   margin:20px;
+  display: flex;
+}
+
+.active {
+  color:pink;
 }
 
 .btn {

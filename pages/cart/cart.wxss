@@ -1,1 +1,101 @@
 /* pages/cart/cart.wxss */
+
+/* 购物车头部 */
+.cart-title {
+  padding:20px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.active {
+  color:pink;
+}
+
+/* 列表标题信息 */
+.cart-list-title {
+  display: flex;
+  padding:20px 10px;
+  border-bottom: 1px solid #eee;
+}
+.cart-list-title view:nth-child(1) {
+  flex-grow: 5;
+}
+.cart-list-title view:nth-child(2) {
+  flex-grow: 1;
+}
+.cart-list-title view:nth-child(3) {
+  flex-grow: 1;
+}
+
+/* 每一列商品栏 */
+.cart-list-item {
+  display: flex;
+  align-items: center;
+  padding:10px;
+  border-bottom:1px solid #eee;
+}
+
+.cart-list-item-name {
+  flex-grow: 3;
+}
+/* 图片 */
+.cart-list-item-name image{
+   vertical-align: middle; 
+}
+.cart-list-item-name text{
+   padding-left:10px;
+}
+
+/* 单个商品数量 */
+.cart-list-item-num {
+  flex-grow: 1;
+  margin:10px 20px;
+}
+.cart-list-item-num-w {
+  position: relative;
+  padding:3px 0;
+  border: 1px solid #eee;
+}
+.cart-list-item-num input {
+  width: 30px;
+  border:none;
+  padding-left: 5px;
+  margin:0;
+}
+/* 减少商品按钮 */
+.cart-list-item-num-w .reduce {
+  position: absolute;
+  top:0;
+  right:8px;
+  line-height: 1rem;
+  height:1rem;
+}
+/* 增加商品数量 */
+.cart-list-item-num-w .add {
+  position: absolute;
+  bottom:0;
+  right:8px;
+  line-height: 1rem;
+  height:1rem;
+}
+
+/* 单个商品小记 */
+.cart-list-item-price {
+  flex-grow: 1;
+}
+
+/* 最后记价 */
+.cart-list-item:last-child {
+  flex-direction:column;
+  align-items: flex-end;
+}
+/* 支付按钮 */
+.go-pay {
+  background-color: #000;
+  color:#fff;
+  padding:5px 10px;
+  box-shadow: 0 0 1px #000;
+}
+.go-pay:active {
+  box-shadow: 0 0 3px #000;
+  background-color: #444;
+}

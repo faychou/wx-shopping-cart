@@ -1,4 +1,33 @@
-<view wx:for="{{goods}}" wx:key="{{item.index}}">
-  <text>{{item.title}} </text>
-  <text> 数量：{{item.num}}</text>
+<view class='cart'>
+  <view class='cart-title'>SHOPPING CART</view>
+  <view class='cart-list-title'>
+    <view>商品</view>
+    <view>数量</view>
+    <view>合计</view>
+  </view>
+  <view class='cart-list-item' wx:for="{{goods}}" wx:key="{{item.index}}">
+    <!-- 商品名称 -->
+    <view class='cart-list-item-name'>
+      <navigator url='../detail/detail?goodsId={{item.index}}' hover-class='active'>
+        <image style='width:75px;height:75px;' mode='aspectFill' src='{{item.src}}'></image> 
+        <text>{{item.title}} </text>
+      </navigator>
+    </view>
+    <!-- 商品数量 -->
+    <view class='cart-list-item-num'>
+      <view class='cart-list-item-num-w'>
+        <input type="number" value="{{item.num}}"/>
+        <text class='reduce' bindtap='reduceCount' id='{{index}}'>-</text>
+        <text class='add' bindtap='addCount' id='{{index}}'>+</text>
+      </view>
+    </view>
+    <!-- 商品小记 -->
+    <view class='cart-list-item-price'>¥ {{item.num * item.price}}  </view>
+  </view>
+  <!-- 总价 -->
+  <view class='cart-list-item'>
+    <view class='cart-total-text'>总计</view>
+    <view class='cart-total-price'>¥ {{sum}}</view>
+    <view class='go-pay'>去支付</view>
+  </view>
 </view>
