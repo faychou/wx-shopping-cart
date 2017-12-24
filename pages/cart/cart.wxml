@@ -17,8 +17,8 @@
     <view class='cart-list-item-num'>
       <view class='cart-list-item-num-w'>
         <input type="number" value="{{item.num}}"/>
-        <text class='reduce' bindtap='reduceCount' id='{{index}}'>-</text>
-        <text class='add' bindtap='addCount' id='{{index}}'>+</text>
+        <view class='count-btn reduce' bindtap='reduceCount' id='{{index}}'>-</view>
+        <view class='count-btn add' bindtap='addCount' id='{{index}}'>+</view>
       </view>
     </view>
     <!-- 商品小记 -->

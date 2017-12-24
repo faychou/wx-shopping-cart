@@ -23,6 +23,9 @@ Page({
     that.setData({
       goods:that.data.goods
     })
+    //更新缓存数据
+    wx.setStorageSync("cartItems", that.data.goods)
+    //重新计算总价
     that.sumMoney()
   },
   //减少商品数量
@@ -38,6 +41,9 @@ Page({
     that.setData({
       goods: that.data.goods
     })
+    //更新缓存数据
+    wx.setStorageSync("cartItems", that.data.goods)
+    //重新计算总价
     that.sumMoney()
   },
   //总价

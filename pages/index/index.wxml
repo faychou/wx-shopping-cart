@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class='item' wx:for="{{goods}}" wx:key="{{item.id}}">
-    <navigator url='../detail/detail?goodsId={{item.id}}' hover-class='active'>{{item.title}}</navigator>
+    <navigator class='item-title' url='../detail/detail?goodsId={{item.id}}' hover-class='active'>{{item.title}}</navigator>
     <view 
       class='btn' 
       bindtap="addCount" 

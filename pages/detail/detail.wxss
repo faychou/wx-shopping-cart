@@ -1,1 +1,13 @@
 /* pages/detail/detail.wxss */
+.detail-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-to-cart,
+.view-cart {
+  padding:5px 20px;
+  background-color: #eee;
+  border:1px solid #999;
+  border-radius: 5px;
+}
